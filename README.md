@@ -6,6 +6,7 @@ A simple trainer for GTA San Andreas multiplayer mod (SA-MP).
 
 This is a program that exploits a certain SA-MP server. The server has a system of stealing cars in which in order to start the engine of a car, the user is given a list of scrambled words, if player manages to unscrabmle them, then the hotwiring is successful.
 
+# How it works
 By examining the executable's memory with <a href="https://www.cheatengine.org/">Cheat Engine</a> I was able to find the pointer to the address of the ChatBox input (samp.dll + 17FBB8 where saml.dll represents the base address of the samp.dll module and 17FBB8 is the offset), thus being able to read the current input that is in the chatbox. I also found *(samp.dll + 0x2ACA14) + 14E0 which is a boolean that indicates whether the chatbox is opened or not. 
 
 The program checks for the input /word00 in the chatbox, attempts to unscramble the word using an english dictionary and then atomatically returns the unscrabmled word to the user's chatbox.
